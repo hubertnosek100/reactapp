@@ -9,15 +9,17 @@ export default class MainContainer extends React.Component {
 
     render() {
 
-        let testlist = Array.from(Array(20)).map(x => new OfferDto(
+        let testlist = Array.from(Array(20)).map((x, idx) => new OfferDto(
+            idx,
             Faker.name.jobTitle(),
             Faker.commerce.color(),
             Faker.image.business(),
             Faker.company.companyName(),
             Faker.address.streetAddress(),
-            Math.floor(Math.random() * 10) + 4
+            Math.floor(Math.random() * 10) + 4,
+            Faker.lorem.paragraphs(3)
         ));
-        
+
         return <>
 
             <div className="main">

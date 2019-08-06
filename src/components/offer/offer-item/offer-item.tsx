@@ -3,15 +3,21 @@ import './offer-item.scss';
 import OfferDto from "../offer-dto";
 
 export interface Props {
-    item: OfferDto
+    item: OfferDto,
+    select: (n: number) => void
 }
 
 export default class OfferItem extends React.Component<Props> {
+
+    onClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
+        this.props.select(this.props.item.id);
+    }
+
     render() {
         let item = this.props.item;
         return <>
             <div className="offer-item">
-                <div className="offer-item__container">
+                <div className="offer-item__container" onClick={this.onClick}>
                     <div className="offer-item__indicator" style={{ backgroundColor: item.color }}>
                     </div>
                     <div className="offer-item__content">
