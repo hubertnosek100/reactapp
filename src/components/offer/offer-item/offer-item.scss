@@ -1,0 +1,71 @@
+$size: 4px;
+
+.offer-item {
+    padding: 10px 20px;
+
+    &__container {
+        background: #343A40;
+        height: 80px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__indicator {
+        background: red;
+        border-radius: 5px 0 0 5px;
+        width: $size;
+        height: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        flex-direction: row;
+        display: flex;
+    }
+
+    &__image {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__info {
+        padding: 0 10px;
+        width: 60%;
+        text-align: start;
+    }
+
+    &__more {
+        display: flex;
+
+        @media (max-width: 450px) {
+            display: none;
+        }
+    }
+
+    &__salary {
+        color: #61DAFB;
+    }
+
+    &__address {
+        margin-left: 4px;
+        color: lightgray;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__company {
+        color: lightgray;
+    }
+}
